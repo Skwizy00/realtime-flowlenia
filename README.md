@@ -12,7 +12,8 @@ GPU-accelerated real-time [Flow Lenia](https://arxiv.org/abs/2212.07906) simulat
 - **Multiple render modes** -- monochrome, warm amber, full liquid shader, direct RGB
 - **Interactive controls** -- pause, reset, pattern switching, mouse perturbation
 - **Real-time performance** -- 512x512 at 30+ FPS on MPS, higher on CUDA
-- **CoreML optimization** -- mixed-precision (float16) simulation + optional ANE rendering offload on macOS
+- **CoreML optimization** -- mixed-precision (fp16 growth + fp32 coords), 512 sim with 1024 display upscale, optional ANE rendering offload
+- **Auto-evolving parameters** -- smooth interpolation between random parameter sets with configurable interval and duration
 
 ## Requirements
 
@@ -37,12 +38,14 @@ pip install -r requirements.txt
 python realtime_flowlenia_gpu.py
 ```
 
-**CoreML-optimized version** (macOS — float16 + ANE rendering):
+**CoreML-optimized version** (macOS — best performance, auto-evolving patterns):
 
 ```bash
 pip install coremltools  # optional, for ANE acceleration
 python realtime_flowlenia_coreml.py
 ```
+
+Simulates at 512x512 and upscales to 1024 display. Parameters auto-evolve every 20 seconds with smooth transitions.
 
 **CPU fallback version** (uses the engine with reintegration tracking):
 
@@ -65,6 +68,7 @@ python realtime_flowlenia.py
 | `g` | Toggle glow effect |
 | `t` | Toggle thin-film interference |
 | `d` | Toggle fluid distortion |
+| `e` | Toggle auto-evolution (CoreML version) |
 | `b` | Run benchmark (CoreML version) |
 | `1`-`5` | Switch initial pattern |
 | Mouse click | Add perturbation |
@@ -72,7 +76,7 @@ python realtime_flowlenia.py
 ## Architecture
 
 - `realtime_flowlenia_gpu.py` -- Self-contained GPU implementation with `grid_sample` advection and liquid shader effects (main entry point)
-- `realtime_flowlenia_coreml.py` -- CoreML-optimized version: mixed-precision float16 simulation, optional ANE rendering offload, `torch.compile` fusion
+- `realtime_flowlenia_coreml.py` -- CoreML-optimized version: 512 sim + 1024 display upscale, surgical mixed-precision (fp16 growth + fp32 coords), auto-evolving parameters, optional ANE rendering, `torch.compile` fusion
 - `realtime_flowlenia_engine.py` -- Engine with proper reintegration tracking transport
 - `realtime_flowlenia.py` -- CPU-friendly viewer using the engine
 - `record_demo.py` -- Headless demo GIF recorder
